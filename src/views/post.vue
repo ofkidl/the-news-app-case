@@ -1,4 +1,5 @@
 <template>
+  <div class="view" v-if="!post.error || loading">
   <div class="post">
     <m-image :loading="loading" :src="post.src || '/image-404.png'" ratio="16x9" />
     <m-heading :loading="loading" :title="post.title"></m-heading>
@@ -12,7 +13,11 @@
     </m-content>
   </div>
   <m-list :items="list" :loading="loading" header="All articles" class="other" />
-
+  </div>
+  <div class="error" v-else>
+    <m-heading :level="3" title="Cannot get data"></m-heading>
+    <m-content><a href="#" @click="loadData" title="Reload page">Reload page</a>  or contact support team.</m-content>
+  </div>
 </template>
 
 <script>
@@ -102,7 +107,6 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-
   .m-content {
     position: relative;
     &.-restricted {
@@ -124,5 +128,12 @@ export default {
 }
 .other {
   margin-top: 60px;
+}
+.error{
+  display: flex;
+  min-height: 300px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 }
 </style>
