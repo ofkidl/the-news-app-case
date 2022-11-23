@@ -67,6 +67,14 @@ button:focus-visible {
   padding: 2em;
 }
 
+.error {
+  display: flex;
+  min-height: 300px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
 #news-app {
   max-width: 1280px;
   margin: 0 auto;

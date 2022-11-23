@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="error">
   <m-heading :level="3" title="Vi finner ikke  artikkelen." />
   <m-content>
     Gå tilbake <router-link :to="{name:'frontpage'}" title="Forside">til forsiden</router-link>.

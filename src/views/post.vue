@@ -129,11 +129,4 @@ export default {
 .other {
   margin-top: 60px;
 }
-.error{
-  display: flex;
-  min-height: 300px;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
 </style>
